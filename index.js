@@ -31,3 +31,17 @@ const questions = [
     message: "What is the shape color? (default is black)",
   },
 ];
+
+function createLogo(answers) {
+  fs.writeFile(desiredPath, shapes(answers), (err) =>
+    err
+      ? console.error(err)
+      : console.log("Generated logo.svg in the examples folder!")
+  );
+}
+
+function init() {
+  inquirer.prompt(questions).then((answers) => createLogo(answers));
+}
+
+init();
