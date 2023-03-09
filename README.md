@@ -22,7 +22,7 @@ No install necessary!
 
 This application is designed to quickly create logos of different shapes, colors, and with different texts.
 
-![Screenshot of the deployed project](./assets/images/screenshotLocation.PNG)
+![Screenshot of the deployed project](./assets/images/svgLogoScreenshot.PNG)
 
 ## License
 
@@ -38,7 +38,9 @@ If you'd like to contribute to this project contact me below.
 
 ## Tests
 
-test instructions
+To create a new logo, navigate to /SVGLogoMaker in the terminal and type "node index.js". Then follow the prompts.
+
+To run a test, navigate to /SVGLogoMaker in the terminal and type "npm run test"
 
 ## Questions
 
