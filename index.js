@@ -23,7 +23,7 @@ const questions = [
     type: "list",
     name: "shape",
     message: "What kind of shape would you like?",
-    choices: ["Triangle", "Circle", "Square"],
+    choices: ["Circle", "Triangle", "Square"],
   },
   {
     type: "input",
@@ -36,7 +36,7 @@ function createLogo(answers) {
   fs.writeFile(desiredPath, shapes(answers), (err) =>
     err
       ? console.error(err)
-      : console.log("Generated logo.svg in the examples folder!")
+      : console.log("Generated logo.svg in the Output folder!")
   );
 }
 
