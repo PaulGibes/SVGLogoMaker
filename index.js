@@ -4,7 +4,8 @@ inquirer.registerPrompt("maxlength-input", MaxLengthInputPrompt);
 const fs = require("fs");
 const path = require("path");
 const desiredPath = path.join(process.cwd(), "Output", "logo.svg");
-const shapes = require("./lib/shapes");
+const { Circle, Triangle, Square } = require("./lib/shapes");
+let userShape;
 
 const questions = [
   {
@@ -33,8 +34,36 @@ const questions = [
 ];
 
 function createLogo(answers) {
-  console.log(answers);
-  fs.writeFile(desiredPath, shapes(answers), (err) =>
+  // console.log(answers);
+
+  switch (answers.shape) {
+    case "Circle":
+      userShape = new Circle(
+        answers.text,
+        answers.textColor,
+        answers.shape,
+        answers.shapeColor
+      );
+      break;
+    case "Triangle":
+      userShape = new Triangle(
+        answers.text,
+        answers.textColor,
+        answers.shape,
+        answers.shapeColor
+      );
+      break;
+    case "Square":
+      userShape = new Square(
+        answers.text,
+        answers.textColor,
+        answers.shape,
+        answers.shapeColor
+      );
+      break;
+  }
+
+  fs.writeFile(desiredPath, userShape.render(), (err) =>
     err
       ? console.error(err)
       : console.log("Generated logo.svg in the Output folder!")
