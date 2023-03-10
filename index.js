@@ -33,6 +33,7 @@ const questions = [
 ];
 
 function createLogo(answers) {
+  console.log(answers);
   fs.writeFile(desiredPath, shapes(answers), (err) =>
     err
       ? console.error(err)
