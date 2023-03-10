@@ -4,7 +4,7 @@ inquirer.registerPrompt("maxlength-input", MaxLengthInputPrompt);
 const fs = require("fs");
 const path = require("path");
 const desiredPath = path.join(process.cwd(), "Output", "logo.svg");
-const { Circle, Triangle, Square } = require("./lib/shapes");
+const { Circle, Triangle, Square } = require("./lib/shapes.js");
 let userShape;
 
 const questions = [
